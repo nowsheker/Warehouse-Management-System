@@ -1,18 +1,20 @@
 from tkinter import *
 import tkinter.messagebox as tkMessageBox import sqlite3 import tkinter.ttk as ttk
 root = Tk()
-root.title("Python: Inventory Management System")
+root.title("Python: Warehouse Management System")
 width = 1024 height = 720
 screen_width = root.winfo_screenwidth() screen_height = root.winfo_screenheight() x = (screen_width/2) - (width/2) y = (screen_height/2) - (height/2)
 root.geometry("%dx%d+%d+%d" % (width, height,x,y)) root.resizable(0, 0) root.config(bg="#1d456d")
-#========================================VARIABLES======= =================================
+
+
 USERNAME = StringVar()
 PASSWORD = StringVar()
 PRODUCT_NAME = StringVar()
 PRODUCT_PRICE = IntVar()
 PRODUCT_QTY = IntVar()
 SEARCH = StringVar()
-#========================================METHODS======== ==================================
+
+
 def Database():
 global conn, cursor
 conn = sqlite3.connect("pythontut.db") cursor = conn.cursor()
@@ -148,15 +150,14 @@ ShowHome() else:
 lbl_result.config(text="Invalid username or password", fg="red")
 USERNAME.set("") PASSWORD.set("") cursor.close() conn.close()
 def ShowHome(): root.withdraw() Home() loginform.destroy()
-#========================================MENUBAR WIDGETS================================== menubar = Menu(root) filemenu = Menu(menubar, tearoff=0) filemenu.add_command(label="Account", command=ShowLoginForm)
+menubar = Menu(root) filemenu = Menu(menubar, tearoff=0) filemenu.add_command(label="Account", command=ShowLoginForm)
 filemenu.add_command(label="Exit", command=Exit) menubar.add_cascade(label="File", menu=filemenu) root.config(menu=menubar)
-#========================================FRAME========== ==================================
+
 Title = Frame(root, bd=1, relief=SOLID)
 Title.pack(pady=10)
-#========================================LABEL WIDGET=====================================
+
 lbl_display = Label(Title, text="Inventory Management System", font=('Times new roman', 45)) lbl_display.pack()
-#========================================INITIALIZATION====
-=============================== if __name__ == '__main__':
+if __name__ == '__main__':
 root.mainloop() from tkinter import *
 import tkinter.messagebox as tkMessageBox import sqlite3 import tkinter.ttk as ttk
 root = Tk()
@@ -164,14 +165,14 @@ root.title("Python: Inventory Management System")
 width = 1024 height = 720
 screen_width = root.winfo_screenwidth() screen_height = root.winfo_screenheight() x = (screen_width/2) - (width/2) y = (screen_height/2) - (height/2)
 root.geometry("%dx%d+%d+%d" % (width, height,x,y)) root.resizable(0, 0) root.config(bg="#1d456d")
-#========================================VARIABLES======= =================================
+
 USERNAME = StringVar()
 PASSWORD = StringVar()
 PRODUCT_NAME = StringVar()
 PRODUCT_PRICE = IntVar()
 PRODUCT_QTY = IntVar()
 SEARCH = StringVar()
-#========================================METHODS======== ==================================
+
 def Database():
 global conn, cursor
 conn = sqlite3.connect("pythontut.db")
@@ -305,13 +306,13 @@ lbl_result.config(text="Invalid username or password", fg="red")
 USERNAME.set("") PASSWORD.set("") cursor.close() conn.close()
 def ShowHome(): root.withdraw() Home()
 loginform.destroy()
-#========================================MENUBAR WIDGETS================================== menubar = Menu(root) filemenu = Menu(menubar, tearoff=0) filemenu.add_command(label="Account", command=ShowLoginForm)
+menubar = Menu(root) filemenu = Menu(menubar, tearoff=0) filemenu.add_command(label="Account", command=ShowLoginForm)
 filemenu.add_command(label="Exit", command=Exit) menubar.add_cascade(label="File", menu=filemenu) root.config(menu=menubar)
-#========================================FRAME========== ==================================
+
 Title = Frame(root, bd=1, relief=SOLID)
 Title.pack(pady=10)
-#========================================LABEL WIDGET=====================================
-lbl_display = Label(Title, text="Inventory Management System", font=('Times new roman', 45)) lbl_display.pack() #========================================INITIALIZATION====
-=============================== if __name__ == '__main__':
+
+lbl_display = Label(Title, text="Inventory Management System", font=('Times new roman', 45)) lbl_display.pack() 
+if __name__ == '__main__':
 root.mainloop()
-OUTPUT
+
